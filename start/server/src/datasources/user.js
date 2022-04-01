@@ -14,6 +14,8 @@ class UserAPI extends DataSource {
    * here, so we can know about the user making requests
    */
   initialize(config) {
+    console.log('init', config)
+
     this.context = config.context;
   }
 
@@ -32,7 +34,8 @@ class UserAPI extends DataSource {
   }
 
   async bookTrips({ launchIds }) {
-    const userId = this.context.user.id;
+    console.log('bookTrips', this.context)
+    const userId = this.context.user?.id;
     if (!userId) return;
 
     let results = [];
