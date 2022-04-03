@@ -18,6 +18,7 @@ injectedStyle()
 export const typeDefs = gql`
   extend type Query {
       isUserLoggedIn: Boolean!
+      cartItems: [ID!]!
   }
 `
 
